@@ -1,0 +1,42 @@
+<hello name="{{ name }}"></hello>
+
+<button (click)="isDanger = !isDanger">Toggle Danger</button>
+<br />
+<button (click)="isWarming = !isWarming">Toggle Warming</button>
+<!-- 
+  - [class.ten-class]
+  - [class] = "[]"
+  - [class] = "object" {}
+  - [class] = "class"
+-->
+
+<div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarming"
+></div>
+<!-- Object -->
+<!-- <div
+  class="box"
+  [class]="{'red-border' : isDanger, 'yellow-background' : isWarming}"
+></div> -->
+<!-- class -->
+<div class="box" [class]="class"></div>
+<!-- 
+  - [style.tenStyle]
+  - [style.ten-Style]
+  - [style.tenStyle.value]
+  - [style] = "object" 
+  - [style.css-variable]
+-->
+<!-- style.css-variable -->
+<p
+  [style.--text-color]="isDanger ? 'red' : 'blue'"
+  [style]="{color: 'var(--text-color)', background: 'yellow'}"
+>
+  Start editing to see some magic happen :)
+</p>
+<!--  -->
+<p [style.color]="'red'" [style.background]="'yellow'" [style.fontSize.px]="20">
+  Start editing to see some magic happen :)
+</p>
